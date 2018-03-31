@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+.container-flex {
+    margin-top: 80px;
+}
+
+.modal-xxl .modal-lg {
+    max-width: 90%;
+}
+
+.modal-body-large {
+    height: 400px;
+}
