@@ -9,11 +9,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent implements OnInit {
 
-  private title = 'CLI Start : Vasu';
-  private data : any;
-  private closeResult: string;
+  public pageTitle = 'CLI Start : Vasu';
+  public data : any;
+  public closeResult: string;
 
-  constructor(private userService : UsersService, private modalService: NgbModal) { }
+  constructor(private userService : UsersService, private modalService : NgbModal) { }
 
   ngOnInit() {
     //alert(this.userService.getUsers());
@@ -22,9 +22,9 @@ export class AppComponent implements OnInit {
 
   open(content) {
     this.modalService.open(content, {size: 'lg', windowClass: 'modal-xxl', backdrop: 'static'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
+     this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
 
