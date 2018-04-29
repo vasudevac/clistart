@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from './users.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,15 +8,13 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent implements OnInit {
 
-  public pageTitle = 'CLI Start : Vasu';
-  public data : any;
+  public pageTitle = 'CLI Start : Vasu';  
   public closeResult: string;
 
-  constructor(private userService : UsersService, private modalService : NgbModal) { }
+  constructor(private modalService : NgbModal) { }
 
   ngOnInit() {
-    //alert(this.userService.getUsers());
-    this.userService.getUsers().subscribe(x => this.data = x._body);
+    
   }
 
   open(content) {

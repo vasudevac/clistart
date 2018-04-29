@@ -1,3 +1,16 @@
-<p>
-  home works!
-</p>
+<div>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let user of data">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+    </tr>
+  </table>
+  </div>

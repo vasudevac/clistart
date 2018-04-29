@@ -14,7 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         RouterModule.forRoot([
             { path: 'welcome', component: HomeComponent },
             { path: 'students', component: StudentsComponent },
-            { path: 'student', component: StudentComponent },
+            { path: 'student/:id/edit', component: StudentComponent },
             { path: '', redirectTo: 'welcome', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent }
         ], { preloadingStrategy: SelectiveStrategy }) // , { enableTracing: true })

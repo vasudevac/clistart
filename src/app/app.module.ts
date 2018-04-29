@@ -11,10 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StudentComponent } from './students/student.component';
+import { NavComponent } from './home/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
     HomeComponent,
     StudentsComponent,
     StudentComponent,
