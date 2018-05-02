@@ -1,3 +1,10 @@
+<!-- <div>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset Counter</button>
+
+    
+</div> -->
 <div>
     <table class="table table-hover">
     <thead>
@@ -7,10 +14,12 @@
         <th>Username</th>
       </tr>
     </thead>
-    <tr *ngFor="let user of data">
+     <tr *ngFor="let user of (users$ | async)">
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.username}}</td>
     </tr>
   </table>
-  </div>
+</div>
+
+<!-- <div>Current Count: {{ (users$ | async) | json}}</div> -->

@@ -10,11 +10,13 @@ export class StudentsComponent implements OnInit {
 
   public posts : any;
 
-  constructor(private userService : UsersService) { }
-
-  ngOnInit() {
+  constructor(private userService : UsersService) { 
     this.userService.getPosts()
     .subscribe(x => this.posts = x);
+  }
+
+  ngOnInit() {
+    
   }
 
 }

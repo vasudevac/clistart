@@ -12,6 +12,13 @@ import { StudentsComponent } from './students/students.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StudentComponent } from './students/student.component';
 import { NavComponent } from './home/nav.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers } from './reducer';
+import { reducer } from './reducer/user.reducer';
+import { UserEffects } from './effects/user.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,10 @@ import { NavComponent } from './home/nav.component';
     BrowserModule,
     HttpModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({user: reducer}),
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([UserEffects])
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
