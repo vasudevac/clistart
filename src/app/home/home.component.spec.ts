@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from '../reducer/user.reducer';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,6 +10,9 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        StoreModule.forRoot({user: reducer})
+      ],
       declarations: [ HomeComponent ]
     })
     .compileComponents();

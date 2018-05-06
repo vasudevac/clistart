@@ -11,3 +11,17 @@
 .modal-body-large {
     height: 400px;
 }
+
+.navbar-nav > li.nav-item {
+    margin-right: 5px;
+}
+
+.nav-item:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.nav-item.active {
+    background-color: #ccc;
+    border-radius: 5px;
+}

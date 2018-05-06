@@ -19,11 +19,11 @@ export class HomeComponent implements OnInit {
   public counter: Observable<number>;
   public users$: Observable<User[]>;
 
-  constructor(private store: Store<any>, private userService : UsersService) { 
+  constructor(private store: Store<any>) { 
     //this.users$ = this.store.select(getAllUsers);
     this.users$ = this.store.select(state => state.user).map(x => x.data);//Working
 
-    this.store.dispatch(new userActions.LoadUserAction());
+    
   }
 
   ngOnInit() {

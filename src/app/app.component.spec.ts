@@ -1,19 +1,33 @@
 import { TestBed, async } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
 //import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { NavComponent } from './home/nav.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { StudentsComponent } from './students/students.component';
+import { StudentComponent } from './students/student.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { Store, StoreModule } from '@ngrx/store';
+import { reducer } from './reducer/user.reducer';
+
 //import { UsersService } from './users.service';
 //import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        
+        AppRoutingModule,
+        StoreModule.forRoot({user: reducer})
       ],
-      providers: [
-        
-      ],
+      providers: [{provide: APP_BASE_HREF, useValue: '/'}],
       declarations: [
-        AppComponent
+        AppComponent,
+        NavComponent,
+        HomeComponent,
+        StudentComponent,
+        StudentsComponent,
+        PageNotFoundComponent
       ],
     }).compileComponents();
   }));
@@ -21,16 +35,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('CLI Start : Vasu');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('CLI Start : Vasu');
   }));
 });
