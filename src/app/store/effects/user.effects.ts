@@ -3,9 +3,9 @@ import { Action } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 
 import * as userActions from '../actions/user.actions';
-import { User } from '../models/user';
+import { User } from '../../models/user';
 import { Observable, pipe } from 'rxjs/Rx';
-import { UsersService } from '../users.service';
+import { UsersService } from '../../users.service';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/mergeMap';

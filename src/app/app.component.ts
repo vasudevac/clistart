@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import * as userActions from './actions/user.actions';
+import * as userActions from './store/actions/user.actions';
 import { Store } from '@ngrx/store';
 
 @Component({

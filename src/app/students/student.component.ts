@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
 import { User } from '../models/user';
-import * as userActions from '../actions/user.actions';
+import * as userActions from '../store/actions/user.actions';
 
 @Component({
   template: `<div>Student</div>

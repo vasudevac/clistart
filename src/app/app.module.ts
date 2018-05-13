@@ -14,10 +14,14 @@ import { StudentComponent } from './students/student.component';
 import { NavComponent } from './home/nav.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers } from './reducer';
-import { reducer } from './reducer/user.reducer';
-import { UserEffects } from './effects/user.effects';
+import { reducers } from './store/reducer';
+import { reducer } from './store/reducer/user.reducer';
+import { UserEffects } from './store/effects/user.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { Comp1Component } from './dynamic-comp-loader/comp1/comp1.component';
+import { Comp2Component } from './dynamic-comp-loader/comp2/comp2.component';
+import { Comp3Component } from './dynamic-comp-loader/comp3/comp3.component';
+import { DynamicCompLoaderComponent } from './dynamic-comp-loader/dynamic-comp-loader.component';
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HomeComponent,
     StudentsComponent,
     StudentComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    DynamicCompLoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([UserEffects])
   ],
+  entryComponents: [Comp1Component, Comp2Component, Comp3Component],
   providers: [UsersService],
   bootstrap: [AppComponent]
 })

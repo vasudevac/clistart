@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { StudentsComponent} from './students/students.component';
 import { StudentComponent} from './students/student.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DynamicCompLoaderComponent } from './dynamic-comp-loader/dynamic-comp-loader.component';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
             { path: 'welcome', component: HomeComponent },
             { path: 'students', component: StudentsComponent },
             { path: 'student/:id/edit', component: StudentComponent },
+            { path: 'dynamiccomp', component: DynamicCompLoaderComponent },
             { path: '', redirectTo: 'welcome', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent }
         ], { preloadingStrategy: SelectiveStrategy }) // , { enableTracing: true })
